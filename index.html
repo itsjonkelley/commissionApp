@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <!-- jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Commission Calculator per Quarter</h1>
+          <p class="lead">This is a quick easy commission quarterly calculator to view where you are and where you want to be.</p>
+        </div>
+      </div>
+
+<!-- container for quota input  -->
+    <div class="container-fluid">
+        <!-- *****ROW ONE, USER INPUTS QUOTA AMOUNT/SHOWS QUOTAS***** -->
+        <div class="row">
+            <!-- *****FIRST COLUMN***** -->
+            <div class="col col-lg-4">
+                <nav class="navbar navbar-light bg-light">
+                    <span class="navbar-brand mb-0 h1">Input items with * next to name</span>
+                  </nav>
+                  <br>
+    <!-- on prem contracts input -->
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Contracts *</span>
+                </div>
+                <input type="text" id="quotaConPrem" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    <!-- EaaS contracts input  -->
+            <div class="input-group mb-4 ">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contracts *</span>
+                </div>
+                <input type="text" id="quotaConEaas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    <!-- Contracts total -->
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Total</span>
+                </div>
+                <input type="text" id="quotaConTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    <!-- on prem verif input -->
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif *</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    <!-- EaaS contracts input  -->
+            <div class="input-group mb-4 ">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verification *</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+    <!-- Contracts total -->
+            <div class="input-group mb-4">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Total</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <button type="button" id="quotaBtn" class="btn btn-info">Calculate Quotas</button>
+      </div>
+<!-- *****SECOND COLUMN*****  -->
+        <!-- *****FIRST COLUMN***** -->
+        <div class="col col-lg-4">
+            <nav class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">Quarter Totals QUOTA</span>
+              </nav>
+              <br>
+<!-- on prem contracts input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">On Prem Con Quarter Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+<!-- EaaS contracts input  -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Con Quarter Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+<!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Con QUARTER Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+<!-- on prem verif input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif Q Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+<!-- EaaS contracts input  -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verif Q Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+<!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Verif Q Total</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+  </div>
+
+  <!-- ***** THIRD COLUMN ***** -->
+  <div class="card col col-lg-4">
+    <div class="card-body">
+      <h5 class="card-title">Visual for each commission chart</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Please click the corresponding link to vew the associated commission chart.</h6>
+      <p class="card-text"></p>
+        <br>
+            <a href="#" class="card-link">Contracts with Quarterly Kicker</a>
+        </br>
+        <br>
+            <a href="#" class="card-link">Verification with Quarterly Kicker</a>
+        </br>
+        <br>
+            <a href="#" class="card-link">EaaS Mchanics</a>
+        </br>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- ***** SECOND ROW ***** -->
+<div class="row">
+    <!-- ***** MONTH 1 ***** -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 1 Input (Input * lines)</span>
+        </nav>
+        <br>
+        <!-- on prem contracts input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contracts Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- on prem verif input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verification Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+    <!-- ***** MONTH 2 *****  -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 2 Input (Input * lines)</span>
+        </nav>
+        <br>
+        <!-- on prem contracts input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contracts Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- on prem verif input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verification Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+    <!-- *****MONTH 3***** -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 3 Input (Input * lines)</span>
+        </nav>
+        <br>
+        <!-- on prem contracts input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contracts Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- on prem verif input -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- EaaS contracts input  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verification Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Contracts total -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Total Closed</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+
+</div>
+
+<!-- break line -->
+<br>
+
+<!-- ***** THIRD ROW ***** -->
+<div class="row">
+    <!-- ***** MONTH 1 OUTPUT PAY ***** -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 1 Commission pay</span>
+        </nav>
+        <br>
+        <!-- Contracts Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Verification Commission Amount  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Total Month Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Total Month Payout</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+    <!-- ***** MONTH 2 OUTPUT PAY*****  -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 2 Commission pay</span>
+        </nav>
+        <br>
+        <!-- Contracts Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Verification Commission Amount  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Total Month Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Total Month Payout</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    <!-- ***** BUTTON TO CALCULATE MONTHLY COMMISSION ***** -->
+        <button type="button" class="btn btn-info block">Calculate My Monthly Commission</button>
+    </div>
+    <!-- ***** MONTH 3 OUTPUT PAY ***** -->
+    <div class="col col-lg-4">
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Month 3 Commission pay</span>
+        </nav>
+        <br>
+        <!-- Contracts Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contracts Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Verification Commission Amount  -->
+        <div class="input-group mb-4 ">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Verification Commission</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+        <!-- Total Month Commission Amount -->
+        <div class="input-group mb-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Total Month Payout</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+        </div>
+    </div>
+
+</div>
+
+</div>
+<br>
+         
+    
+
+
+
+<!-- javascript  -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>
