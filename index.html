@@ -25,14 +25,14 @@
                     <span class="navbar-brand mb-0 h1">Input items with * next to name</span>
                   </nav>
                   <br>
-    <!-- on prem contracts input -->
+    <!-- on prem contracts input ***** USER INPUT *****-->
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">On Prem Contracts *</span>
                 </div>
                 <input type="text" id="quotaConPrem" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-    <!-- EaaS contracts input  -->
+    <!-- EaaS contracts input ***** USER INPUT ***** -->
             <div class="input-group mb-4 ">
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contracts *</span>
@@ -44,79 +44,78 @@
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Contracts Total</span>
                 </div>
-                <input type="text" id="quotaConTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <span type="text" id="quotaConTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
             </div>
-    <!-- on prem verif input -->
+    <!-- on prem verif input ***** USER INPUT *****-->
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif *</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" id="quotaVerifPrem" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
-    <!-- EaaS contracts input  -->
+    <!-- EaaS contracts input  ***** USER INPUT *****-->
             <div class="input-group mb-4 ">
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verification *</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <input type="text" id="quotaVerifEaas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
     <!-- Contracts total -->
             <div class="input-group mb-4">
                 <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Verification Total</span>
                 </div>
-                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <span type="text" id="quotaVerifTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
             </div>
             <button type="button" id="quotaBtn" class="btn btn-info">Calculate Quotas</button>
       </div>
 <!-- *****SECOND COLUMN*****  -->
-        <!-- *****FIRST COLUMN***** -->
         <div class="col col-lg-4">
             <nav class="navbar navbar-light bg-light">
                 <span class="navbar-brand mb-0 h1">Quarter Totals QUOTA</span>
               </nav>
               <br>
-<!-- on prem contracts input -->
+<!-- quarterly prem contracts output -->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">On Prem Con Quarter Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">OnPrem Contract Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qConPrem" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
         </div>
-<!-- EaaS contracts input  -->
+<!-- quarterly EaaS contracts output  -->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Con Quarter Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Contract Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qConEaas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
         </div>
-<!-- Contracts total -->
+<!-- quarterly Contracts total output -->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Con QUARTER Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">Contracts Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qConTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-<!-- on prem verif input -->
+<!-- quarterly on prem verif output -->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">On Prem Verif Q Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">OnPrem Verif Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qVerifPerm" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
         </div>
-<!-- EaaS contracts input  -->
+<!-- quarterly EaaS verification output  -->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verif Q Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">EaaS Verif Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qVerifEaas" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
         </div>
-<!-- Contracts total -->
+<!-- quarterly verification total output-->
         <div class="input-group mb-4">
             <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Verif Q Total</span>
+            <span class="input-group-text" id="inputGroup-sizing-default">All Verif Quarter Total</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <span type="text" id="qVerifTotal" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></span>
         </div>
   </div>
 
@@ -415,7 +414,66 @@
 </div>
 
 </div>
+
+
+<!-- 
+<h1>Maximum Affordable House Payment</h1>
+<p>To calculate your maximum affordable house payment, input your information below and click Submit:</p>
+<form id="afford" onsubmit="return doWork(this);">
+    <fieldset form="afford">
+        <legend>Income</legend>
+        <label for="monthly_income">Monthly Income
+            <input id="test" type="number" name="monthly_income"></label>
+        <label for="alimony_income">Alimony Income
+            <input type="number" name="alimony_income"></label>
+        <label for="interest_income">Interest/Dividend Income
+            <input type="number" name="interest_income"></label>
+    </fieldset>
+    <br>
+    <fieldset form="afford">
+        <legend>Expenses</legend>
+        <label for="credit_card">Credit Card Payments
+            <input type="number" name="credit_card"></label>
+        <label for="car_payments">Car Payments
+            <input type="number" name="car_payments"></label>
+        <label for="other_payments">Other Recurring Payments
+            <input type="number" name="other_payments"></label>
+    </fieldset>
+    <input type="submit" value="Calculate">
+</form>
+<p id="result"></p>
 <br>
+
+
+
+<script>
+    function doWork(form) {
+      var income = +test.value + +form.alimony_income.value +
+                   +form.interest_income.value;
+      var expenses = +form.credit_card.value + +form.car_payments.value + 
+                     +form.other_payments.value;
+        console.log("this is "+ income);
+      var x = .29 * income;
+      var y = .39 * income;
+      var z = y - expenses;
+      var outputElement = document.getElementById("result");
+
+      if (z < x) {
+            outputElement.innerHTML = "Your maximum affordable house payment is " +
+            z + " per month.  This number was calculated by taking 39% of your Gross Income, less Expenses.";
+
+      } else if (x < z) {
+        outputElement.innerHTML = "Your maximum affordable house payment is " + 
+        x + " per month.  This number was calculated by taking 29% of your Gross Income.";
+
+      } else {
+        outputElement.innerHTML = "Your maximum affordable house payment is " + 
+        z + " per month.  This number was calculated by taking 39% of your Gross Income, less Expenses.";
+      }
+      return false;
+    }
+
+</script> -->
          
     
 
@@ -427,6 +485,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 <script src="./script.js"></script>
+
+
+
 
 
 </body>
