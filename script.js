@@ -38,6 +38,8 @@ var onPVer3 = document.getElementById("onPVer3");
 var eaVer3 = document.getElementById("eaVer3");
 var tVer3 = document.getElementById("tVer3");
 
+// commission payout variables
+var mOneConPay = document.getElementById("monthOneConPay");
 
 
 
@@ -48,9 +50,13 @@ plusOperationQuota = function () {
 //sum of on premise and eaas user inputs
     quotaConT = parseInt(inputConPrem.value) + parseInt(inputConEaas.value);
     outputConTotal.innerText = quotaConT;
+
 //sum of on premise verif and eaas verif user inputs
     quotaVerifT = parseInt(inputVerifPrem.value) + parseInt(inputVerifEaas.value);
     outputVerifTotal.innerText = quotaVerifT;
+
+
+
 //sum of on premise and eaas closed contracts inputs month 1
     sumConSold1 = parseInt(onPCon1.value) + parseInt(eaCon1.value);
     tCon1.innerText = sumConSold1;
@@ -99,6 +105,7 @@ byThreeOperation = function () {
 document.getElementById('quotaBtn').onclick = function(e){
     plusOperationQuota();
     byThreeOperation();
+    contracts1Comm();
   };
 
 //   // Get the <span> element that closes the modal
@@ -108,3 +115,27 @@ document.getElementById('quotaBtn').onclick = function(e){
 // spanImg.onclick = function() { 
 //   modal.style.display = "none";
 // }
+
+console.log(inputConPrem.value);
+console.log(60);
+
+contracts1Comm = function() { 
+    if ((tCon1/quotaConTotal)<.6) {
+        zeroPay = (tCon1 * 0);
+        mOneConPay.innerText = zeroPay;
+    } else if ((tCon1/quotaConTotal)>=.6 && (tCon1/quotaConTotal)<.8) {
+        sevenHalfPay = (tCon1 * .075);
+        mOneConPay.innerText = sevenHalfPay;
+    } else if ((tCon1/quotaConTotal)>=.8 && (tCon1/quotaConTotal)<1) {
+        fifteenPay = (tCon1 * .15);
+        mOneConPay.innerText = fifteenPay;
+    } else {
+        twentyPay = (tCon1 * .2);
+        mOneConPay.innerText = twentyPay;
+    };
+};
+
+function closeModal() { 
+    document.getElementsByClassName("commChart").style.display = "none";   
+  };
+
