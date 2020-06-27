@@ -40,6 +40,8 @@ var tVer3 = document.getElementById("tVer3");
 
 // commission payout variables
 var mOneConPay = document.getElementById("monthOneConPay");
+var mTwoConPay = document.getElementById("monthTwoConPay");
+var mThreeConPay = document.getElementById("monthThreeConPay");
 
 
 
@@ -85,19 +87,19 @@ plusOperationClosedWon = function () {
     sumConSold1 = parseInt(onPCon1.value) + parseInt(eaCon1.value);
     tCon1.innerText = sumConSold1;
 //sum of on premise verif and eaas verif user inputs month 1
-    sumVerSold1 = parseInt(onPVer1.value) + parseInt(eaVer1.value);
+    sumVerSold1 = parseInt(onPVerN1.value) + parseInt(onPVerR1.value) + parseInt(eaVer1.value);
     tVer1.innerText = sumVerSold1;
 //sum of on premise and eaas closed contracts inputs month 2
     sumConSold2 = parseInt(onPCon2.value) + parseInt(eaCon2.value);
     tCon2.innerText = sumConSold2;
 //sum of on premise verif and eaas verif user inputs month 2
-    sumVerSold2 = parseInt(onPVer2.value) + parseInt(eaVer2.value);
+    sumVerSold2 = parseInt(onPVerN2.value) + parseInt(onPVerR2.value) + parseInt(eaVer2.value);
     tVer2.innerText = sumVerSold2;
 //sum of on premise and eaas closed contracts inputs month 3
     sumConSold3 = parseInt(onPCon3.value) + parseInt(eaCon3.value);
     tCon3.innerText = sumConSold3;
 //sum of on premise verif and eaas verif user inputs month 3
-    sumVerSold3 = parseInt(onPVer3.value) + parseInt(eaVer3.value);
+    sumVerSold3 = parseInt(onPVerN3.value) + parseInt(onPVerR3.value) + parseInt(eaVer3.value);
     tVer3.innerText = sumVerSold3;
     console.log(onPCon1.value);
 };
@@ -110,40 +112,74 @@ document.getElementById('quotaBtn').onclick = function(e){
     byThreeOperation();
   };
 
+
 //   onclick button to run function on closed won monthly user inputs 
 document.getElementById('commButton').onclick = function(e){
     plusOperationClosedWon();
     contracts1Comm();
+    contracts2Comm();
+    contracts3Comm();
   };
 
 
-//   // Get the <span> element that closes the modal
-// var spanImg = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on <span> (x), close the modal
-// spanImg.onclick = function() { 
-//   modal.style.display = "none";
+// Contract commission functions
+// for (let i = 1; i < 4; i++) {
+//     const element = array[index];
+    
 // }
-
-console.log(inputConPrem.value);
-console.log(60);
-
 contracts1Comm = function() { 
-    console.log(parseInt(tCon1.value));
-    if ((tCon1/quotaConTotal)<.6) {
-        zeroPay = (tCon1 * 0);
+    if ((sumConSold1/quotaConT)<.6) {
+        zeroPay = (sumConSold1 * 0);
         mOneConPay.innerText = zeroPay;
-    } else if ((tCon1/quotaConTotal)>=.6 && (tCon1/quotaConTotal)<.8) {
-        sevenHalfPay = (tCon1 * .075);
+    } else if ((sumConSold1/quotaConT)>=.6 && (sumConSold1/quotaConT)<.8) {
+        sevenHalfPay = (sumConSold1 * .075);
         mOneConPay.innerText = sevenHalfPay;
-    } else if ((tCon1/quotaConTotal)>=.8 && (tCon1/quotaConTotal)<1) {
-        fifteenPay = (tCon1 * .15);
+    } else if ((sumConSold1/quotaConT)>=.8 && (sumConSold1/quotaConT)<1) {
+        fifteenPay = (sumConSold1 * .15);
         mOneConPay.innerText = fifteenPay;
     } else {
-        twentyPay = (tCon1 * .2);
+        twentyPay = (sumConSold1 * .2);
         mOneConPay.innerText = twentyPay;
     };
 };
+
+
+contracts2Comm = function() { 
+    if ((sumConSold2/quotaConT)<.6) {
+        zeroPay = (sumConSold2 * 0);
+        mTwoConPay.innerText = zeroPay;
+    } else if ((sumConSold2/quotaConT)>=.6 && (sumConSold2/quotaConT)<.8) {
+        sevenHalfPay = (sumConSold2 * .075);
+        mTwoConPay.innerText = sevenHalfPay;
+    } else if ((sumConSold2/quotaConT)>=.8 && (sumConSold2/quotaConT)<1) {
+        fifteenPay = (sumConSold2 * .15);
+        mTwoConPay.innerText = fifteenPay;
+    } else {
+        twentyPay = (sumConSold2 * .2);
+        mTwoConPay.innerText = twentyPay;
+    };
+};
+
+contracts3Comm = function() { 
+    if ((sumConSold3/quotaConT)<.6) {
+        zeroPay = (sumConSold3 * 0);
+        mThreeConPay.innerText = zeroPay;
+    } else if ((sumConSold3/quotaConT)>=.6 && (sumConSold3/quotaConT)<.8) {
+        sevenHalfPay = (sumConSold3 * .075);
+        mThreeConPay.innerText = sevenHalfPay;
+    } else if ((sumConSold3/quotaConT)>=.8 && (sumConSold3/quotaConT)<1) {
+        fifteenPay = (sumConSold3 * .15);
+        mThreeConPay.innerText = fifteenPay;
+    } else {
+        twentyPay = (sumConSold3 * .2);
+        mThreeConPay.innerText = twentyPay;
+    };
+};
+
+// verification commission functions 
+if (sumVerSold3/quotaVerifT)
+
+
 
 function closeModal() { 
     document.getElementsByClassName("commChart").style.display = "none";   
