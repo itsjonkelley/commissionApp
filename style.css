@@ -1,14 +1,16 @@
 .jumbotron {
     background-size: cover;
-    background-image: url(https://images.unsplash.com/photo-1543968996-ee822b8176ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-    border-bottom: 200px;
-    padding-top: 50px;
+    background-image: url(https://images.unsplash.com/photo-1517448988499-4cdc5bbde64c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    border-bottom: 250px;
+    padding-top: 150px;
     padding-right: 250px;
+    max-height: 250px;
         
 }
 .jumboText {
-    color: darkred;
+    color: whitesmoke;
     font-weight: 900;
+    text-shadow: 3px 0 0 rgb(0, 0, 0), -3px 0 0 black, 0 3px 0 black, 0 -2px 0 black, 2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
     font-family: 'Times New Roman', Times, serif;
 
 }
@@ -25,10 +27,14 @@ body {
     color: azure;
     width: 160px;
     border-color: rgb(62, 107, 107);
-    border-width: 3px;
+    border-width: 2px;
 }
 .mb-0 {
     font-weight: 900;
+}
+.form-control {
+    border-color: rgb(62, 107, 107);
+    border-width: 1px;
 }
 .btn {
     border: black;

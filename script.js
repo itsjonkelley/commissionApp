@@ -54,29 +54,7 @@ plusOperationQuota = function () {
 //sum of on premise verif and eaas verif user inputs
     quotaVerifT = parseInt(inputVerifPrem.value) + parseInt(inputVerifEaas.value);
     outputVerifTotal.innerText = quotaVerifT;
-
-
-
-//sum of on premise and eaas closed contracts inputs month 1
-    sumConSold1 = parseInt(onPCon1.value) + parseInt(eaCon1.value);
-    tCon1.innerText = sumConSold1;
-//sum of on premise verif and eaas verif user inputs month 1
-    sumVerSold1 = parseInt(onPVer1.value) + parseInt(eaVer1.value);
-    tVer1.innerText = sumVerSold1;
-//sum of on premise and eaas closed contracts inputs month 2
-    sumConSold2 = parseInt(onPCon2.value) + parseInt(eaCon2.value);
-    tCon2.innerText = sumConSold2;
-//sum of on premise verif and eaas verif user inputs month 2
-    sumVerSold2 = parseInt(onPVer2.value) + parseInt(eaVer2.value);
-    tVer2.innerText = sumVerSold2;
-//sum of on premise and eaas closed contracts inputs month 3
-    sumConSold3 = parseInt(onPCon3.value) + parseInt(eaCon3.value);
-    tCon3.innerText = sumConSold3;
-//sum of on premise verif and eaas verif user inputs month 3
-    sumVerSold3 = parseInt(onPVer3.value) + parseInt(eaVer3.value);
-    tVer3.innerText = sumVerSold3;
 };
-
 
 // ***** SECOND COLUMN OUTPUT *****
 //function to get all quarterly totals (multiply column 1 by 3)
@@ -101,12 +79,43 @@ byThreeOperation = function () {
     quarterlyVerifTotal.innerText = outputThreeVerifTotal;
 };
 
+
+plusOperationClosedWon = function () {
+    //sum of on premise and eaas closed contracts inputs month 1
+    sumConSold1 = parseInt(onPCon1.value) + parseInt(eaCon1.value);
+    tCon1.innerText = sumConSold1;
+//sum of on premise verif and eaas verif user inputs month 1
+    sumVerSold1 = parseInt(onPVer1.value) + parseInt(eaVer1.value);
+    tVer1.innerText = sumVerSold1;
+//sum of on premise and eaas closed contracts inputs month 2
+    sumConSold2 = parseInt(onPCon2.value) + parseInt(eaCon2.value);
+    tCon2.innerText = sumConSold2;
+//sum of on premise verif and eaas verif user inputs month 2
+    sumVerSold2 = parseInt(onPVer2.value) + parseInt(eaVer2.value);
+    tVer2.innerText = sumVerSold2;
+//sum of on premise and eaas closed contracts inputs month 3
+    sumConSold3 = parseInt(onPCon3.value) + parseInt(eaCon3.value);
+    tCon3.innerText = sumConSold3;
+//sum of on premise verif and eaas verif user inputs month 3
+    sumVerSold3 = parseInt(onPVer3.value) + parseInt(eaVer3.value);
+    tVer3.innerText = sumVerSold3;
+    console.log(onPCon1.value);
+};
+
+
+
 //onclick button to run function on quota after user inputs
 document.getElementById('quotaBtn').onclick = function(e){
     plusOperationQuota();
     byThreeOperation();
+  };
+
+//   onclick button to run function on closed won monthly user inputs 
+document.getElementById('commButton').onclick = function(e){
+    plusOperationClosedWon();
     contracts1Comm();
   };
+
 
 //   // Get the <span> element that closes the modal
 // var spanImg = document.getElementsByClassName("close")[0];
@@ -120,6 +129,7 @@ console.log(inputConPrem.value);
 console.log(60);
 
 contracts1Comm = function() { 
+    console.log(parseInt(tCon1.value));
     if ((tCon1/quotaConTotal)<.6) {
         zeroPay = (tCon1 * 0);
         mOneConPay.innerText = zeroPay;
