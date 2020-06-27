@@ -20,28 +20,47 @@ var quarterlyVerifTotal = document.getElementById("qVerifTotal");
 var onPCon1 = document.getElementById("onPCon1");
 var eaCon1 = document.getElementById("eaCon1");
 var tCon1 = document.getElementById("tCon1");
-var onPVer1 = document.getElementById("onPVer1");
-var eaVer1 = document.getElementById("eaVer1");
+var onPVerN1 = document.getElementById("onPVerN1");
+var onPVerR1 = document.getElementById("onPVerR1");
+var eaVerN1 = document.getElementById("eaVerN1");
+var eaVerR1 = document.getElementById("eaVerR1");
 var tVer1 = document.getElementById("tVer1");
 //month2
 var onPCon2 = document.getElementById("onPCon2");
 var eaCon2 = document.getElementById("eaCon2");
 var tCon2 = document.getElementById("tCon2");
-var onPVer2 = document.getElementById("onPVer2");
-var eaVer2 = document.getElementById("eaVer2");
+var onPVerN2 = document.getElementById("onPVerN2");
+var onPVerR2 = document.getElementById("onPVerR2");
+var eaVerN2 = document.getElementById("eaVerN2");
+var eaVerR2 = document.getElementById("eaVerR2");
 var tVer2 = document.getElementById("tVer2");
 //month3
 var onPCon3 = document.getElementById("onPCon3");
 var eaCon3 = document.getElementById("eaCon3");
 var tCon3 = document.getElementById("tCon3");
-var onPVer3 = document.getElementById("onPVer3");
-var eaVer3 = document.getElementById("eaVer3");
+var onPVerN3 = document.getElementById("onPVerN3");
+var onPVerR3 = document.getElementById("onPVerR3");
+var eaVerN3 = document.getElementById("eaVerN3");
+var eaVerR3 = document.getElementById("eaVerR3");
 var tVer3 = document.getElementById("tVer3");
 
 // commission payout variables
+//contract
 var mOneConPay = document.getElementById("monthOneConPay");
 var mTwoConPay = document.getElementById("monthTwoConPay");
 var mThreeConPay = document.getElementById("monthThreeConPay");
+var totalComm1 = document.getElementById("month1TotalComm");
+//verification new
+var mOneNewVPay = document.getElementById("monthOneNewVerifPay");
+var mTwoNewVPay = document.getElementById("monthTwoNewVerifPay");
+var mThreeNewVPay = document.getElementById("monthThreeNewVerifPay");
+var totalComm2 = document.getElementById("month2TotalComm");
+//verification repeat
+var mOneRepVPay = document.getElementById("monthOneRepeatVerifPay");
+var mTwoRepVPay = document.getElementById("monthTwoRepeatVerifPay");
+var mThreeRepVPay = document.getElementById("monthThreeRepeatVerifPay");
+var totalComm3 = document.getElementById("month3TotalComm");
+
 
 
 
@@ -87,21 +106,28 @@ plusOperationClosedWon = function () {
     sumConSold1 = parseInt(onPCon1.value) + parseInt(eaCon1.value);
     tCon1.innerText = sumConSold1;
 //sum of on premise verif and eaas verif user inputs month 1
-    sumVerSold1 = parseInt(onPVerN1.value) + parseInt(onPVerR1.value) + parseInt(eaVer1.value);
+    sumVerSold1 = parseInt(onPVerN1.value) + parseInt(onPVerR1.value) + parseInt(eaVerN1.value) + parseInt(eaVerR1.value);
     tVer1.innerText = sumVerSold1;
 //sum of on premise and eaas closed contracts inputs month 2
     sumConSold2 = parseInt(onPCon2.value) + parseInt(eaCon2.value);
     tCon2.innerText = sumConSold2;
 //sum of on premise verif and eaas verif user inputs month 2
-    sumVerSold2 = parseInt(onPVerN2.value) + parseInt(onPVerR2.value) + parseInt(eaVer2.value);
+    sumVerSold2 = parseInt(onPVerN2.value) + parseInt(onPVerR2.value) + parseInt(eaVerN2.value) + parseInt(eaVerR2.value);
     tVer2.innerText = sumVerSold2;
 //sum of on premise and eaas closed contracts inputs month 3
     sumConSold3 = parseInt(onPCon3.value) + parseInt(eaCon3.value);
     tCon3.innerText = sumConSold3;
 //sum of on premise verif and eaas verif user inputs month 3
-    sumVerSold3 = parseInt(onPVerN3.value) + parseInt(onPVerR3.value) + parseInt(eaVer3.value);
+    sumVerSold3 = parseInt(onPVerN3.value) + parseInt(onPVerR3.value) + parseInt(eaVerN3.value) + parseInt(eaVerR3.value);
     tVer3.innerText = sumVerSold3;
-    console.log(onPCon1.value);
+//sum of New verification
+    sumNewOne = parseInt(onPVerN1.value) + parseInt(eaVerN1.value);
+    sumNewTwo = parseInt(onPVerN2.value) + parseInt(eaVerN2.value);
+    sumNewThree = parseInt(onPVerN3.value) + parseInt(eaVerN3.value);
+//sum of Repeart verification
+    sumRepOne = parseInt(onPVerR1.value) + parseInt(eaVerR1.value);
+    sumRepTwo = parseInt(onPVerR2.value) + parseInt(eaVerR2.value);
+    sumRepThree = parseInt(onPVerR3.value) + parseInt(eaVerR3.value);
 };
 
 
@@ -119,6 +145,15 @@ document.getElementById('commButton').onclick = function(e){
     contracts1Comm();
     contracts2Comm();
     contracts3Comm();
+    verifNew1Comm();
+    verifNew2Comm();
+    verifNew3Comm();
+    verifRepeat1Comm();
+    verifRepeat2Comm();
+    verifRepeat3Comm();
+    mon1TotalComm();
+    mon2TotalComm();
+    mon3TotalComm();
   };
 
 
@@ -176,12 +211,57 @@ contracts3Comm = function() {
     };
 };
 
-// verification commission functions 
-if (sumVerSold3/quotaVerifT)
+// verification commission functions NEW
+verifNew1Comm = function () {
+    sevenHalfPay = (sumNewOne * .075);
+    mOneNewVPay.innerText = sevenHalfPay;
+};
+
+verifNew2Comm = function () {
+    sevenHalfPay = (sumNewTwo * .075);
+    mTwoNewVPay.innerText = sevenHalfPay;
+};
+
+verifNew3Comm = function () {
+    sevenHalfPay = (sumNewThree * .075);
+    mThreeNewVPay.innerText = sevenHalfPay;
+};
+
+//verification commission functions REPEAT
+verifRepeat1Comm = function () {
+    halfPay = (sumRepOne * .05);
+    mOneRepVPay.innerText = halfPay;
+};
+
+verifRepeat2Comm = function () {
+    halfPay = (sumRepTwo * .05);
+    mTwoRepVPay.innerText = halfPay;
+};
+
+verifRepeat3Comm = function () {
+    halfPay = (sumRepThree * .05);
+    mThreeRepVPay.innerText = halfPay;
+};
+
+mon1TotalComm = function () {
+    total1 = (mOneConPay + mOneNewVPay + mOneRepVPay);
+    totalComm1.innerText = total1;
+};
+
+mon2TotalComm = function () {
+    total2 = (mTwoConPay + mTwoNewVPay + mTwoRepVPay);
+    totalComm2.innerText = total2;
+};
+mon3TotalComm = function () {
+    total3 = (mThreeConPay + mThreeNewVPay + mThreeRepVPay);
+    totalComm3.innerText = total3;
+};
 
 
 
-function closeModal() { 
-    document.getElementsByClassName("commChart").style.display = "none";   
-  };
+
+
+// function closeModal() { 
+//     document.getElementsByClassName("commChart").style.display = "none";   
+//   };
 
